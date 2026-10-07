@@ -1,3 +1,5 @@
+#include "assert.h"
+
 double seconds_difference(double time_1, double time_2)
 {
     // your implementation goes here...
@@ -59,6 +61,7 @@ double to_float_hours(int hours, int minutes, int seconds)
         >>> to_float_hours(1, 0, 36)
         1.01
     */
+    assert(0 <= minutes < 60 && 0 <= seconds < 60 && hours >= 0);
     return hours + minutes / 60.0 + seconds / 3600.0;
 }
 
@@ -89,7 +92,10 @@ double to_24_hour_clock(double hours)
         with integer and fractional part of a hours separately.
         
     */
-    return 0;
+    assert(hours >= 0);
+    while (hours >= 24)
+        hours -= 24;
+    return hours;
 }
 
 /*
