@@ -7,3 +7,9 @@ double hours_difference(double, double);
 double to_float_hours(int, int, int);
 
 double to_24_hour_clock(double);
+
+int get_hours(int);
+
+int get_minutes(int);
+
+int get_seconds(int);

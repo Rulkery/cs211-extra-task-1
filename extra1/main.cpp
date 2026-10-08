@@ -34,5 +34,26 @@ int main()
     assert(fabs(to_24_hour_clock(4) - 4) < DBL_EPSILON);
     assert(fabs(to_24_hour_clock(28.5) - 4.5) < DBL_EPSILON);
     cout << "пройдены успешно." << endl;
+
+    cout << "тесты для get_hours..." << endl;
+    assert(get_hours(3661) == 1);
+    assert(get_hours(7265) == 2);
+    assert(get_hours(86399) == 23);
+    assert(get_hours(90061) == 25);
+    cout << "пройдены успешно." << endl;
+    
+    cout << "тесты для get_minutes..." << endl;
+    assert(get_minutes(3661) == 1);
+    assert(get_minutes(7265) == 1);
+    assert(get_minutes(86399) == 59);
+    assert(get_minutes(90061) == 1);
+    cout << "пройдены успешно." << endl;
+
+    cout << "тесты для get_secondss..." << endl;
+    assert(get_seconds(3661) == 1);
+    assert(get_seconds(7265) == 5);
+    assert(get_seconds(86399) == 59);
+    assert(get_seconds(90061) == 1);
+    cout << "пройдены успешно." << endl;
 }
 
