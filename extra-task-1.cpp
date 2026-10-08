@@ -195,5 +195,10 @@ double time_from_utc(int utc_offset, double time)
         >>> time_from_utc(+1, 23.0)
         0.0
     */
-    return 0;
+    double result = time + utc_offset;
+
+    while (result < 0)
+		result += 24;
+
+    return to_24_hour_clock(result);
 }
